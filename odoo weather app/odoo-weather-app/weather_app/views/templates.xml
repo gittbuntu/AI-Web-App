@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <template id="weather_template">
+            <t t-call="web.layout">
+                <div class="container">
+                    <h1>Weather Information</h1>
+                    <div>
+                        <t t-foreach="weather_data" t-as="weather">
+                            <div class="weather-item">
+                                <h2><t t-esc="weather.city"/></h2>
+                                <p>Temperature: <t t-esc="weather.temperature"/> °C</p>
+                                <p>Humidity: <t t-esc="weather.humidity"/> %</p>
+                                <p>Description: <t t-esc="weather.description"/></p>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

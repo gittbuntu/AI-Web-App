@@ -1,0 +1,5 @@
+Odoo
+requests
+pandas
+lxml
+psycopg2-binary
