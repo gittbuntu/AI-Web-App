@@ -1,0 +1,14 @@
+1. E:\Program Files (x86)\Odoo 13.0\PostgreSQL\10\data
+
+pg_hba.conf ---> host  all  all 0.0.0.0/0 scram-sha-256
+pg_hba.conf ---> host  all  all 0.0.0.0/0 mb5-sha-256
+
+postgresql.conf ---> listen_addresses = '*'
+
+2. create user and then run query for any restrection
+
+GRANT select ON SCHEMA public TO " user name";
+
+3. register server on other hand  --> provide IP address in hostname
+
+
