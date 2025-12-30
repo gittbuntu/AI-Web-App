@@ -1,0 +1,44 @@
+1-jan   at  50
+
+
+5-jan   in  100
+
+
+10-jan  out  50
+
+
+stock at 10-jan = 100
+
+inventory at 7-jan = 150
+inventory at 8-jan = 150
+inventory at 9-jan =  150
+---------------------------------------------------------------------------------------------------------------------------
+ Unvalidated (Pending) Stock Moves
+
+Stock at Any Location (Current Date) only considers validated (Done) moves up to the current moment.
+
+Inventory at Date can include scheduled (but not yet validated) moves if the report is configured to account for future commitments.
+
+Example Scenario:
+Jan 15:
+
+Confirmed Delivery (Outgoing Move, Not Yet Done): -20
+
+Confirmed Purchase Order (Incoming Move, Not Yet Done): +40
+
+Stock at Any Location (Jan 15):
+
+Only counts Done moves → Shows 120 (100 + 50 - 30, as before).
+
+Inventory at Date (Jan 15, with Future Moves Enabled):
+
+Includes planned moves → Shows 140 (120 - 20 + 40).
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Why Values Differ
+
+Reason	                                                              Stock at Any Location (Current)  	          Inventory at Date (Same Date)
+Pending Moves	                                                      Excludes them 	                         May include them (if future moves enabled)
+Delayed Quant Updates	                                      Real-time (cached)	                             Recomputes from moves
+Manual Adjustments Post-Date	                      Reflects them	                                         Ignores them
+Different Location Scope	Depends on filter     May use different filters
